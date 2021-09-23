@@ -1,6 +1,6 @@
 
  const UNCOMPLETED_LIST_TODO_ID = "todos";
- // const COMPLETED_LIST_TODO_ID = "completed-todos"; 
+ const COMPLETED_LIST_TODO_ID = "completed-todos"; 
 
 
  
@@ -39,6 +39,30 @@ function makeTodo(data,waktu)
     container.classList.add("item","shadow");
 
     container.append(textContainer);
+    container.append(createCheckButton());
 
     return container;
+}
+
+function createButton(buttonTypeClass , eventListener) {
+    const button = document.createElement("button");
+    button.classList.add(buttonTypeClass);
+    button.addEventListener("click", function (event) {
+        eventListener(event);
+    });
+    return button;
+}
+
+function addTaskToCompleted(taskElement)
+{
+
+  taskElement.remove();
+}
+
+function createCheckButton()
+{
+
+    return createButton("check-button",function(event){
+        addTaskToCompleted(event.target.parentElement);
+    });
 }
