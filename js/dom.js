@@ -14,23 +14,21 @@ function addTodo()
     console.log("textTodo "+textTodo);
     console.log("date "+timestamp);
 
-    for(let i = 0; i < 10; i++){
-        const todo = makeTodo();
-
-        uncompletedTODOList.append(todo);
-    }
+     const todo = makeTodo(textTodo,timestamp);
+     uncompletedTODOList.append(todo);
+    
 }
 
 
 
-function makeTodo()
+function makeTodo(data,waktu)
 {
 
     const textTitle = document.createElement("h2");
-    textTitle.innerText = "Tugas Android";
+    textTitle.innerText = data;
 
     const textTimestamp = document.createElement("p");
-    textTimestamp.innerText = "2021-06-22";
+    textTimestamp.innerText = waktu;
 
     const textContainer = document.createElement("div");
     textContainer.classList.add("inner");
