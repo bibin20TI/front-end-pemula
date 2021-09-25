@@ -1,15 +1,20 @@
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", function () {
 
-  const submitForm = document.getElementById("form");
+    const submitForm /* HTMLFormElement */ = document.getElementById("form");
 
-  submitForm.addEventListener("submit", function(event){
+    submitForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        addTodo();
+    });
 
-       event.preventDefault();
-       addTodo();
-  });
-
+    if(isStorageExist()){
+        loadDataFromStorage();
+    }
 });
 
-// ini sangat susah sekali sehigga saya merasa frustasi sekali dengan apa yang saya alami
-// dengan demikian ini sangat susah sekali dengan mengerjakan hal seperti itu 
-// karena saya bukan programer sungguhan karna itu saya sangat kesulitan sekali menggerjakan projek ini 
+document.addEventListener("ondatasaved", () => {
+    console.log("Data berhasil di simpan.");
+});
+
+document.addEventListener("ondataloaded", () => {
+    refreshDataFromTodos();
