@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const submitForm /* HTMLFormElement */ = document.getElementById("form");
+    const submitForm  = document.getElementById("form");
 
     submitForm.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -18,3 +18,4 @@ document.addEventListener("ondatasaved", () => {
 
 document.addEventListener("ondataloaded", () => {
     refreshDataFromTodos();
+});

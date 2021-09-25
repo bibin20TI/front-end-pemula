@@ -2,7 +2,7 @@ const UNCOMPLETED_LIST_TODO_ID = "todos";
 const COMPLETED_LIST_TODO_ID = "completed-todos";
 const TODO_ITEMID = "itemId";
 
-function makeTodo(data /* string */, timestamp /* string */, isCompleted /* boolean */) {
+function makeTodo(data,timestamp, isCompleted) {
 
     const textTitle = document.createElement("h2");
     textTitle.innerText = data;
@@ -50,7 +50,7 @@ function createCheckButton() {
     });
 }
 
-function createButton(buttonTypeClass /* string */, eventListener /* Event */) {
+function createButton(buttonTypeClass , eventListener ) {
     const button = document.createElement("button");
     button.classList.add(buttonTypeClass);
     button.addEventListener("click", function (event) {
@@ -75,7 +75,7 @@ function addTodo() {
     updateDataToStorage();
 }
 
-function addTaskToCompleted(taskElement /* HTMLELement */) {
+function addTaskToCompleted(taskElement) {
     const listCompleted = document.getElementById(COMPLETED_LIST_TODO_ID);
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
@@ -93,7 +93,7 @@ function addTaskToCompleted(taskElement /* HTMLELement */) {
     updateDataToStorage();
 }
 
-function removeTaskFromCompleted(taskElement /* HTMLELement */) {
+function removeTaskFromCompleted(taskElement) {
 
     const todoPosition = findTodoIndex(taskElement[TODO_ITEMID]);
     todos.splice(todoPosition, 1);
@@ -102,7 +102,7 @@ function removeTaskFromCompleted(taskElement /* HTMLELement */) {
     updateDataToStorage();
 }
 
-function undoTaskFromCompleted(taskElement /* HTMLELement */) {
+function undoTaskFromCompleted(taskElement) {
     const listUncompleted = document.getElementById(UNCOMPLETED_LIST_TODO_ID);
     const taskTitle = taskElement.querySelector(".inner > h2").innerText;
     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
