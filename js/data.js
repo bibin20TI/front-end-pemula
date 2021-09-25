@@ -17,7 +17,7 @@ let todos = [];
   * Fungsi ini digunakan untuk memeriksa apakah localStorage didukung oleh browser atau tidak
   * 
   * @returns boolean 
-  */
+  
  function isStorageExist() /* boolean */ {
     if(typeof(Storage) === undefined){
         alert("Browser kamu tidak mendukung local storage");
