@@ -21,14 +21,14 @@ function addTodo()
 
 
 
-function makeTodo(data,waktu)
+function makeTodo(data,timestamp)
 {
 
     const textTitle = document.createElement("h2");
     textTitle.innerText = data;
 
     const textTimestamp = document.createElement("p");
-    textTimestamp.innerText = waktu;
+    textTimestamp.innerText = timestamp;
 
     const textContainer = document.createElement("div");
     textContainer.classList.add("inner");
@@ -55,9 +55,18 @@ function createButton(buttonTypeClass , eventListener) {
 
 function addTaskToCompleted(taskElement)
 {
+//    const taskTitle = taskElement.querySelector(".inner > h2").innerText;
+// //     const taskTimestamp = taskElement.querySelector(".inner > p").innerText;
 
-  taskElement.remove();
+//     const newTodo = makeTodo(taskTitle,taskTimestamp);
+//     const listCompleted = document.getElementById("COMPLETED_LIST_TODO_ID");
+
+//     listCompleted.append(newTodo);
+    taskElement.remove();
 }
+
+
+
 
 function createCheckButton()
 {
